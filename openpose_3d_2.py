@@ -70,7 +70,6 @@ def main():
     with tf.Session(config=config) as sess:
 
         sess.run(tf.global_variables_initializer())
-        net.load(pretrain_path, sess, False)
         tf.train.Saver().restore(sess,
                                  '/media/rodrigo/c1d7e9c9-c8cb-402e-b241-9090925389b3/human_action/test_tb/openpose_3d/save/save.ckpt')
         cap = cv2.VideoCapture(0)
